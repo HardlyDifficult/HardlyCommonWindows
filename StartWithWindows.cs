@@ -1,14 +1,17 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Reflection;
-using System.Windows;
 
 namespace HD
 {
+  /// <summary>
+  /// TODO this needs to be configured for the app
+  /// </summary>
   public static class StartWithWindows
   {
     // The path to the key where Windows looks for startup applications
-    static readonly RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+    static readonly RegistryKey rkApp = Registry.CurrentUser.OpenSubKey(
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
     const string appName = "Hardly Difficult Miner";
 
