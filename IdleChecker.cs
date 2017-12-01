@@ -19,14 +19,21 @@ namespace HD
 
     [DllImport("Kernel32.dll")]
     static extern uint GetLastError();
-    
+
     public static TimeSpan GetIdleTime()
     {
       LASTINPUTINFO lastInPut = new LASTINPUTINFO();
       lastInPut.cbSize = (uint)Marshal.SizeOf(lastInPut);
       GetLastInputInfo(ref lastInPut);
 
-      return TimeSpan.FromMilliseconds(((uint)Environment.TickCount - lastInPut.dwTime));
+      uint tickCount;
+
+      unchecked
+      {
+        tickCount = (uint)Environment.TickCount;
+      }
+
+      return TimeSpan.FromMilliseconds(tickCount - lastInPut.dwTime);
     }
 
     /// <summary>
