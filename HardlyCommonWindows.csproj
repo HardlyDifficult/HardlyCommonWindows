@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HD</RootNamespace>
-    <AssemblyName>HardlyCommonWindows</AssemblyName>
+    <AssemblyName>Hardly.Common.Windows</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,9 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Bot|AnyCPU'">
-    <OutputPath>bin\Bot\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
